@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import Template,Context,loader
 
 from coderBlog.models import *
-from coderBlog.forms import Formulario
+from 
 
 
 # Create your views here.
