@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.template import Template,Context,loader
 
 from coderBlog.models import *
-from 
 
 
 # Create your views here.
@@ -44,14 +43,16 @@ def formulario(request):
         
         clientes = Clientes(nombre=nombre)
         clientes.save()
+        
         programadores = Programadores(nombre=nombre)
         programadores.save()
+        
         profesores = Profesores(nombre=nombre)
         profesores.save()
         
         return render(request, 'index.html')
-    
-    return render(request, 'formulario.html')
+    else:
+        return render(request, 'formulario.html')
 '''
 
 def formulario(request):
