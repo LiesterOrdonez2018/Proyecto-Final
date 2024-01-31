@@ -14,20 +14,20 @@ def clientes(request):
     clientes.save()
     
     texto = f'Cliente:{clientes.nombre}, {clientes.apellido}, {clientes.email} '
-    return render('coderBlog/clientes.html')
+    return render(request, 'coderBlog/clientes.html')
 
 def programadores(request):
     programadores = Programadores()
     programadores.save()
      
-    texto = 'Programador: {programadores.nombre}, {programadores.apellido}, {programadores.curso} '
-    return render('coderBlog/programadores.html')
+    texto = f'Programador: {programadores.nombre}, {programadores.apellido}, {programadores.curso}'
+    return render(request, 'coderBlog/programadores.html')
  
 def profesores(request):
       profesores = Profesores()
       profesores.save()
       
-      texto = f'Profesor: {profesores.nombre}, {profesores.celular}'
+      texto = f'Profesor: {profesores.nombre}, {profesores.apellido}'
       return render(request,'coderBlog/profesores.html')
 
 def index(request):
@@ -92,3 +92,20 @@ def busqueda_nombre(request):
         print(f'Vamos a buscar el nombre: {nombre}')
     
     return render(request, 'busqueda_nombre.html')
+
+def leer_profesores(request):
+    profesores = Profesores.objects.all()
+    contexto = {'profesores': profesores}
+    return render(request, 'leer_profesores.html', contexto) 
+     
+def leer_clientes(request):
+    clientes = Clientes.objects.all()
+    contexto = {'clientes': clientes}
+    return render(request, 'leer_clientes.html', contexto) 
+    
+    
+def leer_programadores(request):
+    programadores = Programadores.objects.all()
+    contexto = {'programadores': programadores}
+    return render(request, 'leer_programadores.html', contexto) 
+         

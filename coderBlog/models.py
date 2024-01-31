@@ -27,7 +27,7 @@ class Programadores(models.Model):
 class Profesores(models.Model):
     nombre=models.CharField(max_length=20)
     apellido=models.CharField(max_length=20)
-    celular=models.IntegerField()
+    #celular=models.IntegerField()
     
     def __str__(self):
         return f'{self.nombre}, {self.apellido}'
