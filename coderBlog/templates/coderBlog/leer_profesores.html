@@ -8,9 +8,13 @@
 <body>
     {% for p in profesores %}
     <li>{{p}}</li>
+    <button>
+        <a href="{% url 'eliminar_profesor' p.nombre %}">Eliminar</a>
+    </button>
     {% endfor %}
-
+    <br>
     <a href="profesores">Agregar profesor</a>
+    <a href="eliminar_profesor" p.nombre>Eliminar profesor</a>
     
 </body>
 </html>
